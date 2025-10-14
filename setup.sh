@@ -23,7 +23,7 @@ sudo nginx -s reload
 
 # install uv for python management
 curl -LsSf https://astral.sh/uv/install.sh | sh
-source ~/.bashrc
+source $HOME/.local/bin/env
 
 # install flask, gunicorn, certbot
 uv add flask gunicorn certbot certbot-nginx
