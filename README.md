@@ -29,7 +29,7 @@ We will mainly follow [this medium article](https://medium.com/@kawsarlog/from-f
 # Step 2: Run Installation Script
 - Run the bash script.
     ```sh
-    bash -i script.sh
+    bash -i setup.sh
     ```
 - You will be prompted to **enter your domain name**. If you don't have any, you can put in anything like: `yoursite.com`
 
