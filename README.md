@@ -32,20 +32,29 @@ We will mainly follow [this medium article](https://medium.com/@kawsarlog/from-f
     bash -i setup.sh
     ```
 - You will be prompted to **enter your domain name**. If you don't have any, you can put in anything like: `yoursite.com`
+- Proceed with all the information `certbot` asks for certification.
 
 # Notes
-- To kill the app running using `gunicorn`, do:
+- To kill the flass web app running using `gunicorn`, do:
 ```sh
 pkill gunicorn
 ```
-
-<!-- # Setp 1: Install Nginx
+- To restart the flask webb app, do:
 ```sh
-sudo apt install nginx -y
+uv run gunicorn --workers=3 --bind 0.0.0.0:8000 app:app --daemon
 ```
-# Step 2: Configure Nginx
-- Create a new Nginx configuration file for your Flask application:
-    ```sh
-    sudo nano /etc/nginx/sites-enabled/flask_app
-    ```
-- Get your `domain name read -->
+- To deactivate the `uv` virtual environment
+```sh
+deactivate
+```
+- To reactivate the `uv` virtual environment
+```sh
+source .venv/bin/activate
+```
+
+<!-- 
+- To update to lates github repo
+```sh
+git fetch --all; git reset --hard origin/main
+```
+ -->

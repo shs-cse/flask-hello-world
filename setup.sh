@@ -7,7 +7,6 @@ echo "Hello, $domain!"
 
 # install and configure nginx
 sudo apt install nginx -y
-sudo nano /etc/nginx/sites-enabled/flask_app
 echo "server {
     listen 80;
     server_name $domain;
