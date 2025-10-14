@@ -37,3 +37,13 @@ gunicorn --workers=3 --bind 0.0.0.0:8000 app:app --daemon
 
 # request for certification
 certbot --nginx
+
+# firewall setup
+# allow both http and https
+sudo ufw allow 'Nginx Full'
+# allow openssh
+sudo ufw allow OpenSSH
+# enable firewall
+sudo ufw --force enable
+# show status
+sudo ufw status

@@ -35,22 +35,30 @@ We will mainly follow [this medium article](https://medium.com/@kawsarlog/from-f
 - Proceed with all the information `certbot` asks for certification.
 
 # Notes
-- To kill the flass web app running using `gunicorn`, do:
-```sh
-pkill gunicorn
-```
-- To restart the flask webb app, do:
-```sh
-uv run gunicorn --workers=3 --bind 0.0.0.0:8000 app:app --daemon
-```
+- To kill the flass web app running using `gunicorn`
+    ```sh
+    pkill gunicorn
+    ```
+- To restart the flask webb app
+    ```sh
+    uv run gunicorn --workers=3 --bind 0.0.0.0:8000 app:app --daemon
+    ```
 - To deactivate the `uv` virtual environment
-```sh
-deactivate
-```
+    ```sh
+    deactivate
+    ```
 - To reactivate the `uv` virtual environment
-```sh
-source .venv/bin/activate
-```
+    ```sh
+    source .venv/bin/activate
+    ```
+- To reload firewall settings after changing
+    ```sh
+    sudo ufw reload
+    ```
+- To disallow a port previously allowed (say `8000`)
+    ```sh
+    sudo ufw delete allow 8000
+    ```
 
 <!-- 
 - To update to lates github repo
