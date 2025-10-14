@@ -27,4 +27,14 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc
 
 # install flask, gunicorn, certbot
-uv add flask
+uv add flask gunicorn certbot certbot-nginx
+
+# activate the venv environment so that 
+# we don't have to write `uv run` before every command
+source .venv/bin/activate
+
+# run the flask web app in daemon background
+gunicorn --workers=3 --bind 0.0.0.0:8000 app:app --daemon
+
+# request for certification
+certbot --nginx
